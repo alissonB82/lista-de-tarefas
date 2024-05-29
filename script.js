@@ -5,7 +5,11 @@ function adicionarTarefa() {
     if (input.value.trim() !== "") {
         const li = document.createElement('li');
         li.textContent = input.value;
+        li.onclick = function() {
+            ul.removeChild(li);
+        };
         ul.appendChild(li);
         input.value = "";
     }
 }
+
